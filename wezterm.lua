@@ -80,12 +80,4 @@ return {
           },
         },
       },
-
-      keys = {
-        {
-          key = 'C',
-          mods = 'CTRL|SHIFT',
-          action = wezterm.action.CopyTo 'ClipboardAndPrimarySelection',
-        },
-      },
 }
