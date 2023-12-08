@@ -2,10 +2,73 @@ local wezterm = require 'wezterm'
 
 return {
     font = wezterm.font 'JetBrains Mono',
-    color_scheme = "nord",
+    color_scheme = 'nord',
 
     hide_tab_bar_if_only_one_tab = true,
     use_fancy_tab_bar = false,
+
+    keys = {
+      -- SplitVertical
+      {
+        key = 'e',
+	mods = 'CTRL|SHIFT',
+	action = wezterm.action.SplitVertical { domain = 'CurrentPaneDomain' },
+      },
+      -- SplitHorizontal
+      {
+        key = 'o',
+	mods = 'CTRL|SHIFT',
+	action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' },
+      },
+      -- ActivatePaneDirection Left
+      {
+        key = 'LeftArrow',
+        mods = 'ALT',
+        action = wezterm.action.ActivatePaneDirection 'Left',
+      },
+      -- ActivatePaneDirection Right
+      {
+        key = 'RightArrow',
+        mods = 'ALT',
+        action = wezterm.action.ActivatePaneDirection 'Right',
+      },
+      -- ActivatePaneDirection Up
+      {
+        key = 'UpArrow',
+        mods = 'ALT',
+        action = wezterm.action.ActivatePaneDirection 'Up',
+      },
+      -- ActivatePaneDirection Down
+      {
+        key = 'DownArrow',
+        mods = 'ALT',
+        action = wezterm.action.ActivatePaneDirection 'Down',
+      },
+      -- AdjustPaneSize Left
+      {
+        key = 'LeftArrow',
+	mods = 'CTRL|SHIFT',
+	action = wezterm.action.AdjustPaneSize { 'Left', 1 },
+      },
+      -- AdjustPaneSize Right
+      {
+        key = 'RightArrow',
+	mods = 'CTRL|SHIFT',
+	action = wezterm.action.AdjustPaneSize { 'Right', 1 },
+      },
+      -- AdjustPaneSize Up
+      {
+        key = 'UpArrow',
+	mods = 'CTRL|SHIFT',
+	action = wezterm.action.AdjustPaneSize { 'Up', 1 },
+      },
+      -- AdjustPaneSize Down
+      {
+        key = 'DownArrow',
+	mods = 'CTRL|SHIFT',
+	action = wezterm.action.AdjustPaneSize { 'Down', 1 },
+      },
+    },
 
     colors = {
         tab_bar = {
